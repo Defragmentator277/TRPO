@@ -1,0 +1,103 @@
+body
+{
+    bottom: 0;
+}
+.main_div
+{
+    left: 100px;
+    right: 100px;
+    height: 1500px;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: black;
+}
+
+.top_menu 
+{
+    margin: 0 25px;
+    border: 2px solid black;
+    background-color: white;
+    display: flex;
+}
+/* MAIN PARTS */
+.big_menu
+{
+    border: 2px solid black;
+    background-color: white;
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 0px;
+    top: 100px;
+}
+
+#label_top
+{
+    display: inline-block;
+    margin-left: 10px;
+    /* padding-bottom: 5px; */
+}
+
+.horizontal_menu
+{
+    display: flex;
+    margin-left: 15px;
+}
+.horizontal_menu > li
+{
+    font-size: large;
+    width: 125px;
+    height: 30px;
+}
+.horizontal_menu > li:hover > .pop_up
+{
+    display: block;
+}
+/*POP UP WINDOW*/
+.pop_up
+{
+    display: none;
+    position: absolute;
+    z-index: 2;
+    /* left: 25px;
+    right: 25px; */
+}
+.pop_up > ul
+{
+    display: block;
+    border: 2px solid black;
+    background-color: white;
+    padding: 15px;
+}
+.pop_up li
+{
+    padding-bottom: 5px;
+}
+
+.triangle_top
+{
+    height: 0px;
+    width: 0px;
+    border: 20px solid transparent;
+    border-bottom: 20px solid black;
+}
+.pop_up > .triangle_top
+{
+    margin-left: 0px;
+}
+
+i
+{
+    color: white;
+}
+ul
+{
+    padding-left: 0px;
+    list-style-type: none;
+}
+/* IMAGE SCROLL */
+.scroll_box
+{
+    margin-top: 20px;
+}

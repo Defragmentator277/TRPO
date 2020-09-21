@@ -1,0 +1,16 @@
+{
+  "name": "music_page",
+  "version": "1.0.0",
+  "description": "First webpage practice",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo \"Server start!\""
+  },
+  "author": "Zimin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node": "^14.11.0"
+  }
+}
