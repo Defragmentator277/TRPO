@@ -1,6 +1,7 @@
 .scroll_box_albums
 {
     margin: auto 30px;
+    margin-top: 45px;
     /* height: 1000px; */
     height: 500px;
     position: relative;
@@ -17,7 +18,8 @@
     top: 0%;
     /* ANIMATIONS */
     display: none;
-    transition: left 1s, right 1s, width 1s, box-shadow 1s;
+    transition: box-shadow 1s;
+    /* transition: left 1s, right 1s, width 1s, box-shadow 1s; */
     box-shadow: 15px -10px 30px 5px rgba(0, 0, 0, 1);
     /* transition: ; */
 }

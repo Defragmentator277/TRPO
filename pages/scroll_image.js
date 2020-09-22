@@ -2,7 +2,6 @@ window.onload = () =>
 {
     let active_img = 1;
     let animated_ = true;
-    let Y;
     let element = $('#img_scroll_' + active_img);
     let scroll_box = $('#scroll_box_albums');
     let arrow = $('#info_expande');
@@ -37,6 +36,7 @@ window.onload = () =>
         let elem = $('#img_scroll_' + (active_img - 1 * koeff));
         if(elem.length && animated_)//
         {
+            animated_ = false;
             let to_hide = $('#img_scroll_' + (active_img + 1 * koeff));
             let to_show = $('#img_scroll_' + (active_img - 2 * koeff));
             let left = '0';
@@ -49,37 +49,21 @@ window.onload = () =>
                 margin_left = '-300px';
                 box_shadow = '20px';
             }//right
-            animated_ = false;
-            element.animate({ 'opacity': '0.5', 'z-index': '0', 'left': left, 'width': '300px' }, {complete: () => 
+            element.animate({ 'opacity': '0.5', 'z-index': '0', 'left': left, 'width': '300px', 'margin-left': margin_left }, {duration: 500, complete: () => 
             {
                 element.css('box-shadow', box_shadow + ' -20px 30px 5px rgba(0, 0, 0, 1)');
-                element.animate({ 'margin-left': margin_left }, 1000);
+                elem.css('box-shadow', '0px -10px 30px 5px rgba(0, 0, 0, 1)');
+                elem.css('z-index', '1');
+                element.animate({ }, 400);
                 to_hide.fadeOut();
-                elem.animate({ 'opacity': '1', 'z-index': '1', 'left': '50%', 'width': '500px'}, {complete: () => 
+                elem.animate({ 'opacity': '1', 'z-index': '1', 'left': '50%', 'width': '500px', 'margin-left': '-250px' }, {duration: 500, complete: () => 
                 {
-                    elem.css('box-shadow', '0px -10px 30px 5px rgba(0, 0, 0, 1)');
-                    elem.animate({ 'margin-left': '-250px' });
-                    to_hide.hide('fast');
-                    to_show.show();
+                    to_show.show('fast');
+                    to_hide.hide('slow');
                     animated_ = true;
                 }});
             }}); 
         }
-    }).on('mousedown', (e) => 
-    {
-        // Y = e.clientY;
-        animated_ = true;
-        Y = e.clientY;
-    }).on('mousemove', (e) => 
-    {
-        element = $('#img_scroll_' + active_img);
-        if(animated_)
-        {
-            element.offset({ 'top': Y - e.clientY});
-        }
-    }).on('mouseup', (e) => 
-    {
-
     });
 
 }
