@@ -1,23 +1,38 @@
+*
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 body
 {
     bottom: 0;
+    background-attachment: fixed;
+    /* background-image: url(images/background_main.jpeg); */
+    background-image: url(images/background.jpg);
+    background-color: #828282;
 }
 .main_div
 {
-    left: 100px;
-    right: 100px;
+    margin: 0 auto;
+    width: 950px;
     height: 1500px;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    background-color: black;
+    /* position: absolute; */
+    /* background-attachment: fixed;
+    background-image: url(images/background.jpg); */
+    background-attachment: fixed;
+    background-image: url(images/another.jpg);
+    background-color: #7f7679;
 }
 
-.top_menu 
+header
 {
-    margin: 0 25px;
-    border: 2px solid black;
-    background-color: white;
+    /* margin: 0 -25px; */
+    /* border: 2px solid black; */
+
+    background: linear-gradient(#808080, #000000 50%, #000000 100%);
+    background-image: url(images/background_top.jpg);
+    /* box-shadow: 0px 11px 16px 11px rgba(70, 71, 71, 0.7); */
     display: flex;
 }
 /* MAIN PARTS */
@@ -32,27 +47,48 @@ body
     top: 100px;
 }
 
+#label_top, .center_text
+{
+    color: #f4fae9;
+    /* text-shadow: 0 0 20px white; */
+}
 #label_top
 {
     display: inline-block;
     margin-left: 10px;
     /* padding-bottom: 5px; */
 }
-
+.center_text
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
 .horizontal_menu
 {
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .horizontal_menu > li
 {
+    display: block;
     font-size: large;
-    width: 125px;
-    height: 30px;
+    width: 150px;
+    height: 100%;
+    /* margin-right: 10px; */
+    border-left: 0.5px solid white;
+    border-right: 0.5px solid white;
 }
 .horizontal_menu > li:hover > .pop_up
 {
     display: block;
+    cursor: pointer;
 }
 /*POP UP WINDOW*/
 .pop_up
@@ -97,7 +133,7 @@ ul
     list-style-type: none;
 }
 /* IMAGE SCROLL */
-.scroll_box
+.scroll_box_albums
 {
     margin-top: 20px;
 }
