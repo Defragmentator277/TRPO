@@ -10,7 +10,8 @@
     <!-- JavaSript -->
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
     <script src="../scripts/scroll_image.js" text="type/javascript"></script>
-    <script src="../scripts/jquery.min.js" text="type/javascripts"></script>
+    <script src="../scripts/jquery.min.js" text="type/javascript"></script>
+    <script src="../scripts/scroll_list.js" text="type/javascript"></script>
     <!-- <script text="type/javascript" src="generate_img.js"></script> -->
     <!-- Font Awesome -->
     <!-- <script src="https://use.fontawesome.com/6ca3a3f6a0.js"></script> -->
@@ -37,13 +38,17 @@
     </header>
 
     <div class="main_div">
-        <h1 id="label_relise">Недавание релизы</h1>
+        <ul class="animated_list">
+            <li class="label current">Недавание релизы</li>
+            <li class="label">Горячие новости</li>
+            <li class="label">И многое другое!</li>
+        </ul>
         <hr>
         <div class="scroll_box_albums" id="scroll_box_albums">
-            <img class="img_scroll" alt="No image" src="images/enter/cover_1.jpg" id="img_scroll_1">
-            <img class="img_scroll" alt="No image" src="images/enter/cover_2.jpg" id="img_scroll_2">
-            <img class="img_scroll" alt="No image" src="images/enter/cover_3.jpg" id="img_scroll_3">
-            <img class="img_scroll" alt="No image" src="images/enter/cover_4.jpg" id="img_scroll_4">
+            <img class="img_scroll" alt="No image" src="../images/enter/cover_1.jpg" id="img_scroll_1">
+            <img class="img_scroll" alt="No image" src="../images/enter/cover_2.jpg" id="img_scroll_2">
+            <img class="img_scroll" alt="No image" src="../images/enter/cover_3.jpg" id="img_scroll_3">
+            <img class="img_scroll" alt="No image" src="../images/enter/cover_4.jpg" id="img_scroll_4">
         </div>
         <div id="info_expande" data-orientation="down"><i class="fas fa-angle-down"></i></div>
         <div id="helper">
