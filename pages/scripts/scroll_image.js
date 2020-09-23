@@ -12,7 +12,7 @@ window.onload = () =>
         if(arrow.data('orientation') == 'down')
         {
             arrow.css('transform', 'rotate(180deg)');
-            arrow.css('display', 'blocks');
+            // arrow.css('display', 'block');
             arrow.data('orientation', 'up');
             //
             // reviev.fadeTo(400, 1);

@@ -70,6 +70,7 @@ header
 {
     display: flex;
     justify-content: center;
+    height: 70px;
     align-items: center;
     margin-left: 15px;
     margin-top: 0;
@@ -94,6 +95,7 @@ header
 .pop_up
 {
     display: none;
+    margin-top: -20px;
     position: absolute;
     z-index: 2;
     /* left: 25px;
