@@ -1,19 +1,14 @@
 express = require('express');
-MongoDB = require('mongodb').MongoClient;
+// MongoDB = require('mongodb').MongoClient;
+// const MongoClient = new MongoClient("");
 app = express();
 // mongo = 
 
-//Enter Middleware
-// app.use('/enter', (req, res) => 
-// {
-//     // res.sendFile(__dirname + '/pages/enter/index.html');
-//     // express.static('pages/enter');
-//     // express.static('pages');
-//     // express.static('pages/scripts');
-// });
-
-app.use('/enter', express.static('pages/enter'));
-//Main Get
+//Main Middleware
+app.use(express.static('pages/enter'));
+app.use(express.static('pages/scripts'));
+app.use(express.static('pages'));
+//Main Getf
 app.get('/', (req, res) => 
 {
     // res.sendFile(__dirname + '/pages/basic.css');
@@ -29,4 +24,4 @@ app.post('/', (req, res) =>
 });
 
 
-app.listen(8080);
+app.listen(3000);

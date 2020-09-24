@@ -11,7 +11,7 @@
 
 hr
 {
-    margin: 25px auto;
+    margin: 0px auto;
 }
 
 #info_expande
@@ -64,17 +64,11 @@ hr
     min-height: 30px;
 }
 
-.animated_list 
+#title_enter 
 {
-    overflow: hidden;
+    display: block;
+    max-height: 30px;
     padding-top: 25px;
-    margin-left: 30px;
-    height: 50px;
+    padding-bottom: 45px;
+    margin-left: 15px;
 }
-.animated_list > .label
-{
-    margin-bottom: 25px;
-    height: 50px;
-    /* display: none; */
-}
-.current {}
