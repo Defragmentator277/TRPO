@@ -5,10 +5,12 @@ window.onload = () =>
     let current_mes = 0;
     let messages = [ "Недавание релизы", "Горячие новости", "И многое другое!"];
     let label_enter = $('#title_enter');
+    let title_album = $('#title_album');
+    let title_band = $('#title_band');
     let scroll_box = $('#scroll_box_albums');
     let arrow = $('#info_expande');
-    let reviev = $('#text_box');
-    reviev.slideUp();
+    let text_box = $('#text_box');
+    text_box.slideUp();
 
 
     function Rotate_Images(e)
@@ -38,6 +40,8 @@ window.onload = () =>
             element.animate({ 'opacity': '0.5', 'z-index': '0', 'left': left, 'width': '300px', 'margin-left': margin_left }, {duration: 500, complete: () => 
             {
                 element.css('box-shadow', box_shadow + ' -20px 30px 5px rgba(0, 0, 0, 1)');
+                title_album.fadeOut({complete: () => { title_album.html(elem.attr('data-name')) }});
+                title_album.fadeIn();
                 elem.css('box-shadow', '0px -10px 30px 5px rgba(0, 0, 0, 1)');
                 elem.css('z-index', '1');
                 element.animate({ }, 400);
@@ -61,43 +65,48 @@ window.onload = () =>
             arrow.data('orientation', 'up');
             //
             // reviev.fadeTo(400, 1);
-            reviev.slideDown();
+            text_box.slideDown();
         }
         else
         {
             arrow.css('transform', 'rotate(0deg)');
             arrow.data('orientation', 'down');
             //
-            reviev.slideUp();
+            text_box.slideUp();
         }
     }
 
     function Scroll_Text()
     {
-        // let koeff = -1;
-        // if(Math.random() > 0.5) // down
-        //     koeff = 1;
-        // console.log(current_mes + koeff < messages.length);
-        // if(current_mes + koeff > 0)
-        // {
-        // }
         console.log('enter');
         label_enter.animate({ 'margin-left': '+=100px', 'opacity': '0' }, { complete: () => 
         {
             label_enter.css('margin-left', '-10px');
-            let new_mes = Math.random() * 2;
-            console.log(new_mes);
-            console.log(current_mes);
-            console.log("sdfsdfsdf");
-            while(Math.round(new_mes) == Math.round(current_mes))
-                new_mes = Math.random() * 2;
-            label_enter.html(messages[Math.round(new_mes)]);
+            let new_mes = current_mes;
+            while(new_mes == current_mes)
+                new_mes = Math.round(Math.random() * 2);
+            label_enter.html(messages[new_mes]);
             label_enter.animate({ 'margin-left': '15px', 'opacity': '1' });
             current_mes = new_mes;
         }});
-        // current_mes += koeff;
     }
 
+    function Load_Images()
+    {
+        // text_box.load( { data: 'hollow' });
+        $.post('http://localhost:3000/', { data: 'hollow' }, (result) => 
+        {
+            console.log(result);
+            result.map((elem, index) => 
+            {
+                if(index == 0)
+                    title_album.html(elem.Name);
+                scroll_box.append(`<img data-name="${elem.Name}" class="img_scroll" id="img_scroll_${index + 1}" src="${elem.cover}">`);
+            });
+        });
+    }
+
+    Load_Images();
     arrow.on("click", (e) => Rotate_Arrow(e));
     scroll_box.on('click', (e) => Rotate_Images(e));
     setInterval(Scroll_Text, Math.random() * 5000 + 3000);
